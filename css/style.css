@@ -61,7 +61,7 @@ h2 {
   border: 0;
 }
 .top_section .top_bg {
-  background: url(../img/rdam-bg_3.jpg);
+  background: url(../img/banner/rdam-bg_3.jpg);
   height: 800px;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -101,6 +101,9 @@ h2 {
   margin: 0 auto;
   position: relative;
 }
+/*.modal-body .profilepic {
+  float: left;
+}*/
 .footer p {
   text-align: center;
   font-size: 18px;

@@ -15,11 +15,12 @@
 	$less->checkedCompile('less/style.less', 'css/style.css')
 	
 	?>
-	<link href="css/style.css" rel="stylesheet" />
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
 	<link href="css/font-awesome.min.css" rel="stylesheet" />
 	<link href="css/animate.min.css" rel="stylesheet" />
 	<link href="css/hover.css" rel="stylesheet" />
+	<link href="css/dashboard.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
 	
 </head>
 
@@ -37,6 +38,7 @@ require_once $globals->topbanner_php;
 
 // Content
 if(empty($_GET['content'])) {
+	// Default
 	require_once $globals->team_php;
 	require_once $globals->midbanner_php;
 	require_once $globals->contact_php;

@@ -7,6 +7,8 @@ $(document).ready(function() {
   // Scripts
   var modal_php = modal + "/modal.php";
   
+  //-----------------------------------//
+  
   // Modal
   $('.person').click(function() {
     var name = $(this).attr('data-name');

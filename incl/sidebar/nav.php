@@ -23,6 +23,10 @@ class Nav extends Database {
       echo "<li><a href='project?id=".$this->rows['project_id']."'>".$this->rows['project_name']."</a></li>";
     }
   }
+  
+  public function showUser() {
+    echo "<label>Ingelogd als: ".$_SESSION['signedin']['account_username']." (".$_SESSION['signedin']['account_rights'].")</label>";
+  }
 }
 
 $nav = new Nav();
@@ -54,6 +58,7 @@ $nav = new Nav();
       require_once $globals->signin_php;
     }
     else {
+      $nav->showUser();
       require_once $globals->signout_php;
     }
   ?>

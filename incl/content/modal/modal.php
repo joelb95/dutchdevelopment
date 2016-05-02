@@ -2,10 +2,12 @@
 
 class Modal {
   public $name = "";
+  public $fname = "";
   
   public function __construct() {
     if(isset($_POST['name'])) {
       $this->name = $_POST['name'];
+      $this->fname = ucfirst($_POST['name']);
     }
   }
   
@@ -33,7 +35,7 @@ $modal = New Modal();
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Documenten van <?php echo ucfirst($modal->name); ?></h4>
+        <h4 class="modal-title">Documenten van <?php echo $modal->fname; ?></h4>
       </div>
       <div class="modal-body">
         <div class="row">

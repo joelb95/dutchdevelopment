@@ -56,7 +56,7 @@ class Signin extends Database {
   
   public function qryDatabase() {
     $this->sql = "
-      SELECT a.account_id, a.account_username, a.account_password, a.account_rights
+      SELECT a.account_id, a.account_username, a.account_rights
 			FROM accounts AS a
 			WHERE a.account_username = '".$this->usr."'
 				AND a.account_password = '".$this->pwd."'
@@ -80,9 +80,10 @@ class Signin extends Database {
   }
   
   public function storeKey() {
+    
     $this->sql = "
-      INSERT INTO Cookies (cookie_id, cookie_key)
-      VALUES ('".$_SESSION['signedin']['account_id']."','".$this->key."');
+      INSERT INTO cookies (cookie_id, cookie_key)
+      VALUES ('".$_SESSION['signedin']['account_id']."', '".$this->key."');
     ";
     
     $this->query = mysqli_query($this->db, $this->sql);

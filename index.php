@@ -53,6 +53,7 @@ if(empty($_GET['content'])) {
 }
 else {
 	switch($_GET['content']) {
+		// Home
 		case 'home':
 			require_once $globals->team_php;
 			require_once $globals->midbanner_php;
@@ -66,6 +67,7 @@ else {
 				}
 			}
 			break;
+		// Dashboard
 		case 'dashboard':
 			if(isset($_SESSION['signedin'])) {
 				switch($_SESSION['signedin']['account_rights']) {
@@ -78,6 +80,7 @@ else {
 			}
 			require_once $globals->midbanner_php;
 			break;
+		// Project
 		case 'project':
 			// NOTE: Empty Projectpage
 			require_once $globals->midbanner_php;

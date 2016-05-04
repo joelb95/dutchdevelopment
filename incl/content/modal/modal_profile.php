@@ -1,6 +1,6 @@
 <?php
 
-class Modal {
+class ModalProfile {
   public $name = "";
   public $fname = "";
   
@@ -11,39 +11,40 @@ class Modal {
     }
   }
   
-  public function memberImg() {
+  public function profileImg() {
     echo "<img class='img-responsive img-center profilepic' src='img/team/".$this->name."_photo.png' alt=''>";
   }
   
   public function listPdf() {
     chdir("../../../");
     
-    foreach (glob("pdf/team/".$this->name."_pdf/*.{[pP][dD][fF]}", GLOB_BRACE) as $this->pdf_file) {
+    foreach (glob("doc/team/".$this->name."_works/pdf/*.{[pP][dD][fF]}", GLOB_BRACE) as $this->pdf_file) {
       echo "<i class='fa fa-file-pdf-o modal-text'></i> <a href='".$this->pdf_file."' target='_blank'>".basename($this->pdf_file)."</a><br/>";
     }
   }
 }
 
-$modal = New Modal();
+$modalprofile = New ModalProfile();
 ?>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myProfile" class="modal fade" role="dialog"> 
+  <!-- Modal -->
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Documenten van <?php echo $modal->fname; ?></h4>
+        <h4 class="modal-title">Documenten van <?php echo $modalprofile->fname; ?></h4>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-xs-3">
-            <?php $modal->memberImg(); ?>
+            <?php $modalprofile->profileImg(); ?>
           </div>
           <div class="col-xs-9">
-            <?php $modal->listPdf(); ?>
+            <h4 class="file-title"><i class="fa fa-file-pdf-o"></i> .PDF bestanden</h4>
+            <?php $modalprofile->listPdf(); ?>
           </div>
         </div>
       </div>

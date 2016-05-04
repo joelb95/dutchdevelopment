@@ -1,11 +1,13 @@
 <?php
 
 class Signout extends Database {
+  private $key;
   
   public function __construct() {
     if(isset($_POST['signout'])) {
       $this->connDatabase();
       $this->dbError();
+      $this->escString();
       $this->eraseKey();
       $this->destCookie();
       $this->destSession();
@@ -13,10 +15,16 @@ class Signout extends Database {
     }
   }
   
+  public function escString() {
+    $this->key = $_COOKIE['signedin'];
+    
+    $this->key = mysqli_real_escape_string($this->db, $this->key);
+  }
+  
   public function eraseKey() {
     $this->sqlOne = "
       DELETE FROM cookies 
-      WHERE cookie_key = '".$_COOKIE['signedin']."'
+      WHERE cookie_key = '".$this->key."'
         AND cookie_id = '".$_SESSION['signedin']['account_id']."'
     "; 
    

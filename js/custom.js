@@ -5,45 +5,42 @@ $(document).ready(function() {
       var modal = content + "/modal";
   
   // Scripts
-  var modal_php = modal + "/modal.php";
+  var modalprofile_php = modal + "/modal_profile.php";
+  var modalalert_php = modal + "/modal_alert.php";
   
   //-----------------------------------//
   
-  // Modal
+  // Modal Profile
   $('.person').click(function() {
     var name = $(this).attr('data-name');
     
     $.ajax({
       type : 'post',
-      url : modal_php, 
+      url : modalprofile_php, 
       data : {
         name : name
       }, 
       success : function(data) {
-        $('#myModal').replaceWith(data);
-        $('#myModal').modal('show')
+        $('#myProfile').replaceWith(data);
+        $('#myProfile').modal('show')
       }
     });
   });
   
-  // var table = $('#table-dttt').DataTable();
-  // $("<button type='button' class='btn btn-default btn-left' data-toggle='modal' data-target='#insert-project'>Project Toevoegen</button>").prependTo("div.dataTables_filter");
- 
-} );
-
-// function deleteProject(id) {
-//   //Just a pass
-//   confirm = "confirm";
-  
-//   $.ajax({
-//     type: "POST",
-//     url: "delete_project.php",
-//     data: {
-//       confirm: confirm,
-//       id : id
-//     },
-//     success: function (data) {
-//       location.reload();
-//     }
-//   });
-// }
+  // Modal Alert
+  $('.btn-del').click(function() {
+    var id = $(this).attr('data-id');
+    
+    $.ajax({
+      type : 'post',
+      url : modalalert_php, 
+      data : {
+        id : id
+      }, 
+      success : function(data) {
+        $('#myAlert').replaceWith(data);
+        $('#myAlert').modal('show')
+      }
+    });
+  });
+});

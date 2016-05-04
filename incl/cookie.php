@@ -9,6 +9,7 @@ class Cookie extends Database {
     if(isset($_COOKIE['signedin']) and empty($_SESSION['signedin'])) {
       $this->connDatabase();
       $this->dbError();
+      $this->escString();
       $this->checkKey();
       if($this->row == 1) {
         $this->initSession();
@@ -20,11 +21,17 @@ class Cookie extends Database {
     }
   }
   
+  public function escString() {
+    $this->key = $_COOKIE['signedin'];
+    
+    $this->key = mysqli_real_escape_string($this->db, $this->key);
+  }
+  
   public function checkKey() {
     $this->sql = "
       SELECT a.account_id, a.account_username, a.account_rights
 			FROM cookies AS c, accounts AS a
-			WHERE c.cookie_key = '".$_COOKIE['signedin']."'
+			WHERE c.cookie_key = '".$this->key."'
         AND c.cookie_id = a.account_id
     ";
     

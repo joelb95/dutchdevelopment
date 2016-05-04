@@ -3,6 +3,7 @@
 class Globals {
   protected $project = "/dutch_development";
   protected $home = "/home";
+  protected $home_dashboard = "/dashboard";
   
   public $lesscinc_php = "/lessc.inc.php";
   public $database_php = "/database.php";
@@ -13,10 +14,12 @@ class Globals {
   public $signout_php = "/signout.php";
   public $topbanner_php = "/top_banner.php";
   public $team_php = "/team.php";
-  public $modal_php = "/modal.php";
+  public $modalprofile_php = "/modal_profile.php";
   public $midbanner_php = "/mid_banner.php";
   public $contact_php = "/contact.php";
   public $dashboard_php = "/dashboard.php";
+  public $modalform_php = "/modal_form.php";
+  public $modalalert_php = "/modal_alert.php";
   public $map_php = "/map.php";
   
   private $root;
@@ -70,7 +73,9 @@ class Globals {
     $this->dashboard_php = $this->content.$this->dashboard_php;
     
     $this->map_php = $this->footer.$this->map_php;
-    $this->modal_php = $this->modal.$this->modal_php;
+    $this->modalprofile_php = $this->modal.$this->modalprofile_php;
+    $this->modalform_php = $this->modal.$this->modalform_php;
+    $this->modalalert_php = $this->modal.$this->modalalert_php;
   }
   
   public function locScripts() {

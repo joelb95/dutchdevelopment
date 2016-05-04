@@ -46,7 +46,7 @@ if(empty($_GET['content'])) {
 		switch($_SESSION['signedin']['account_rights']) {
 			case 'admin':
 			case 'albeda':
-				require_once $globals->modal_php;
+				require_once $globals->modalprofile_php;
 				break;
 		}
 	}
@@ -61,7 +61,7 @@ else {
 				switch($_SESSION['signedin']['account_rights']) {
 					case 'admin':
 					case 'albeda':
-						require_once $globals->modal_php;
+						require_once $globals->modalprofile_php;
 						break;
 				}
 			}
@@ -71,13 +71,14 @@ else {
 				switch($_SESSION['signedin']['account_rights']) {
 					case 'admin':
 						require_once $globals->dashboard_php;
+						require_once $globals->modalform_php;
+						require_once $globals->modalalert_php;
 						break;
 				}
 			}
-			require_once $globals->midbanner_php;
 			break;
 		case 'project':
-			// NOTE: Empty Project
+			// NOTE: Empty Projectpage
 			require_once $globals->midbanner_php;
 			break;
 	}	

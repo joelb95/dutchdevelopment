@@ -101,9 +101,6 @@ h2 {
   margin: 0 auto;
   position: relative;
 }
-/*.modal-body .profilepic {
-  float: left;
-}*/
 .footer p {
   text-align: center;
   font-size: 18px;
@@ -129,4 +126,12 @@ h2 {
 }
 .middle_banner img {
   width: 100%;
+}
+.file-title {
+  font-size: 19px;
+  margin-top: 0px;
+}
+.panel-title {
+  margin-bottom: 10px;
+  font-size: 32px;
 }

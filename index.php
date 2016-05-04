@@ -76,6 +76,7 @@ else {
 						break;
 				}
 			}
+			require_once $globals->midbanner_php;
 			break;
 		case 'project':
 			// NOTE: Empty Projectpage

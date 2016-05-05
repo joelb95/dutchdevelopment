@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 mei 2016 om 18:36
+-- Gegenereerd op: 05 mei 2016 om 19:31
 -- Serverversie: 5.7.11
 -- PHP-versie: 5.6.19
 
@@ -50,7 +50,8 @@ INSERT INTO `accounts` (`account_id`, `account_username`, `account_password`, `a
 
 CREATE TABLE `cookies` (
   `cookie_id` int(10) NOT NULL,
-  `cookie_key` char(32) NOT NULL
+  `cookie_key` char(32) NOT NULL,
+  `cookie_lastvisit` varchar(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

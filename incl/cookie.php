@@ -6,9 +6,10 @@ class Cookie extends Database {
   private $key;
   
   public function __construct() {
+    $this->connDatabase();
+    $this->dbError();
+    
     if(isset($_COOKIE['signedin']) and empty($_SESSION['signedin'])) {
-      $this->connDatabase();
-      $this->dbError();
       $this->escString();
       $this->checkKey();
       if($this->row == 1) {
@@ -17,8 +18,20 @@ class Cookie extends Database {
         $this->generateKey();
         $this->changeKey();
         $this->initCookie();
+        $this->returnPage();
       }
     }
+  }
+  
+  public function chgLastVisit($lastvisit) {
+    $this->sql = "
+      UPDATE cookies
+      SET cookie_lastvisit = '".$lastvisit."' 
+      WHERE cookie_key = '".$_COOKIE['signedin']."'
+        AND cookie_id = '".$_SESSION['signedin']['account_id']."'
+    ";
+    
+    $this->query = mysqli_query($this->db, $this->sql);
   }
   
   public function escString() {
@@ -29,8 +42,9 @@ class Cookie extends Database {
   
   public function checkKey() {
     $this->sql = "
-      SELECT a.account_id, a.account_username, a.account_rights
-			FROM cookies AS c, accounts AS a
+      SELECT a.account_id, a.account_username, a.account_rights, 
+             c.cookie_lastvisit
+			FROM accounts AS a, cookies AS c
 			WHERE c.cookie_key = '".$this->key."'
         AND c.cookie_id = a.account_id
     ";
@@ -68,6 +82,10 @@ class Cookie extends Database {
   
   public function initCookie() {
     setcookie("signedin", $this->key, time() + (3600 * 24 * 365), "/");
+  }
+  
+  public function returnPage() {
+    header("Location: ".$_SERVER['REQUEST_URI']);
   }
 }
 

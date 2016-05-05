@@ -47,6 +47,10 @@ if(empty($_GET['content'])) {
 			case 'admin':
 			case 'albeda':
 				require_once $globals->modalprofile_php;
+				$cookie->chgLastVisit('home');
+				break;
+			case 'klant':
+				$cookie->chgLastVisit('home');
 				break;
 		}
 	}
@@ -63,6 +67,10 @@ else {
 					case 'admin':
 					case 'albeda':
 						require_once $globals->modalprofile_php;
+						$cookie->chgLastVisit('home');
+						break;
+					case 'klant':
+						$cookie->chgLastVisit('home');
 						break;
 				}
 			}
@@ -75,15 +83,21 @@ else {
 						require_once $globals->dashboard_php;
 						require_once $globals->modalform_php;
 						require_once $globals->modalalert_php;
+						$cookie->chgLastVisit('dashboard');
 						break;
 				}
 			}
 			require_once $globals->midbanner_php;
+			require_once $globals->contact_php;
 			break;
 		// Project
 		case 'project':
 			// NOTE: Empty Projectpage
+			if(isset($_SESSION['signedin'])) {
+				$cookie->chgLastVisit('project?id='.$_GET['id']);
+			}
 			require_once $globals->midbanner_php;
+			require_once $globals->contact_php;
 			break;
 	}	
 }

@@ -6,18 +6,11 @@ class Session extends Globals {
   public function __construct() {
     session_start();
     
-    if(empty($_SESSION['signedin']['cookie_lastvisit'])) {
-      $this->initSession();
-    }
-    else {
+    if(isset($_SESSION['signedin']['cookie_lastvisit'])) {
       $this->putLastVisit();
       $this->destSession();
       $this->returnToPage();
     }
-  }
-  
-  public function initSession() {
-    $_SESSION['lastvisit'] = $this->lastvisit;
   }
   
   public function putLastVisit() {

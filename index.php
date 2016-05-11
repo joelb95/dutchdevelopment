@@ -94,10 +94,10 @@ else {
 		// Project
 		case 'project':
 			// NOTE: Empty Projectpage
-			require_once $globals->error_php;
 			if(isset($_SESSION['signedin'])) {
 				$cookie->chgLastVisit('project?id='.$_GET['id']);
 			}
+			require_once $globals->error_php;
 			break;
 		// Page 404
 		default:

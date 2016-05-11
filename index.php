@@ -20,6 +20,7 @@
 	<link href="css/animate.min.css" rel="stylesheet" />
 	<link href="css/hover.css" rel="stylesheet" />
 	<link href="css/dashboard.css" rel="stylesheet" />
+	<link href="css/error.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	
 </head>
@@ -93,11 +94,14 @@ else {
 		// Project
 		case 'project':
 			// NOTE: Empty Projectpage
+			require_once $globals->error_php;
 			if(isset($_SESSION['signedin'])) {
 				$cookie->chgLastVisit('project?id='.$_GET['id']);
 			}
-			require_once $globals->midbanner_php;
-			require_once $globals->contact_php;
+			break;
+		// Page 404
+		default:
+			require_once $globals->error_php;
 			break;
 	}	
 }

@@ -18,6 +18,7 @@ class Globals {
   public $midbanner_php = "/mid_banner.php";
   public $contact_php = "/contact.php";
   public $dashboard_php = "/dashboard.php";
+  public $error_php = "/error.php";
   public $modalform_php = "/modal_form.php";
   public $modalalert_php = "/modal_alert.php";
   public $map_php = "/map.php";
@@ -71,6 +72,7 @@ class Globals {
     $this->midbanner_php = $this->content.$this->midbanner_php;
     $this->contact_php = $this->content.$this->contact_php;
     $this->dashboard_php = $this->content.$this->dashboard_php;
+    $this->error_php = $this->content.$this->error_php;
     
     $this->map_php = $this->footer.$this->map_php;
     $this->modalprofile_php = $this->modal.$this->modalprofile_php;

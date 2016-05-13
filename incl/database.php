@@ -5,8 +5,8 @@ class Database extends Globals {
   
   private $hostname = "localhost";
   private $username = "root";
-  private $password = "";
-  private $database = "dutch_development";
+  private $password = "usbw";
+  private $database = "dutch_development";  
   
   public function connDatabase() {
     $this->db = new mysqli($this->hostname, $this->username, $this->password, $this->database);

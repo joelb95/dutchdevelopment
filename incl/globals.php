@@ -24,6 +24,8 @@ class Globals {
   public $modalalert_php = "/modal_alert.php";
   public $map_php = "/map.php";
   
+  public $beheersmail = "rdenblaauwen@gmail.com";
+  
   private $root;
   private $partials = "/partials";
   private $incl = "/incl";

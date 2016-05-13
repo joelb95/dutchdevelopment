@@ -5,7 +5,7 @@
     <hr>
     <div class="col-xs-6">
       <h2>Contactformulier</h2>
-      <form class="contact-form" method="post" action="handler.php">
+      <form class="contact-form" method="post">
         <div class="form-group">
           <label for="InputName">Naam</label>
           <input type="text" name="naam" id="naam" required="required" class="form-control">
@@ -22,8 +22,23 @@
           <label for="InputMessage">Bericht</label>
           <textarea class="form-control" rows="4" name="bericht" id="bericht" required="required"></textarea>
         </div>
-        <button type="submit" class="btn btn-default">Verzenden</button>
+        <button type="submit" name="contact" class="btn btn-default">Verzenden</button>
       </form>
+      <?php
+        if(isset($_POST['contact']))
+        {
+            $to = $globals->beheersmail;
+            $subject = 'DD klantbericht:'.$_POST['naam'];
+            $message = $_POST['bericht'].'\r\n\r\n'.
+                        $_POST['naam'].'\r\n'.
+                        $_POST['telefoon'].'\r\n';
+            $headers = 'From:'.$_POST['email']. "\r\n" .
+                        'Reply-To:'.$_POST['email']. "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                        
+            mail($to, $subject, $message, $headers);
+        }
+      ?>
     </div>
     <div class="col-xs-6">
       <h2>Contactgegevens</h2>

@@ -1,22 +1,10 @@
-@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
-
-* {
+.cnmenu {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
   position: relative
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  background: #FF9000;
-  color: #fff;
 }
 
 .csstransforms .cn-wrapper {

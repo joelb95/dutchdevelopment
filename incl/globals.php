@@ -14,6 +14,7 @@ class Globals {
   public $signin_php = "/signin.php";
   public $signout_php = "/signout.php";
   public $topbanner_php = "/top_banner.php";
+  public $video_php = "/video.php";
   public $team_php = "/team.php";
   public $modalprofile_php = "/modal_profile.php";
   public $midbanner_php = "/mid_banner.php";
@@ -69,6 +70,7 @@ class Globals {
     $this->signout_php = $this->sidebar.$this->signout_php;
     
     $this->topbanner_php = $this->header.$this->topbanner_php;
+    $this->video_php = $this->header.$this->video_php;
     
     $this->team_php = $this->content.$this->team_php;
     $this->midbanner_php = $this->content.$this->midbanner_php;

@@ -5,7 +5,7 @@ class Database extends Globals {
   
   private $hostname = "localhost";
   private $username = "root";
-  private $password = "usbw";
+  private $password = "";
   private $database = "dutch_development";  
   
   public function connDatabase() {

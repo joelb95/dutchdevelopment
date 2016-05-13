@@ -20,7 +20,7 @@
 	<link href="css/animate.min.css" rel="stylesheet" />
 	<link href="css/hover.css" rel="stylesheet" />
 	<link href="css/dashboard.css" rel="stylesheet" />
-	<link href="css/component1.css"  rel="stylesheet"  />
+	<link href="css/project.css"  rel="stylesheet" />
 	<link href="css/error.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	<style>
@@ -125,7 +125,7 @@ else {
 	<script src="//cdn.datatables.net/t/bs/dt-1.10.11,r-2.0.2/datatables.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/polyfills.js"></script>
-	<script src="js/demo1.js"></script>
+	<script src="js/project.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>

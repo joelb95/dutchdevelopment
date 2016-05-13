@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="component">
-    <!-- Start Nav Structure -->
-    <button class="cn-button" id="cn-button">+</button>
-    <div class="cn-wrapper" id="cn-wrapper">
-      <ul>
-        <li><a href="#"><span class="icon-picture"></span></a></li>
-        <li><a href="#"><span class="icon-headphones"></span></a></li>
-        <li><a href="#"><span class="icon-home"></span></a></li>
-        <li><a href="#"><span class="icon-facetime-video"></span></a></li>
-        <li><a href="#"><span class="icon-envelope-alt"></span></a></li>
-      </ul>
-    </div>
-    <div id="cn-overlay" class="cn-overlay"></div>
-    <!-- End Nav Structure -->
+<div class="component cnmenu">
+  <!-- Start Nav Structure -->
+  <button class="cn-button cnmenu" id="cn-button">+</button>
+  <div class="cn-wrapper cnmenu" id="cn-wrapper">
+    <ul class="cnmenu">
+      <li class="cnmenu"><a href="#"><span class="fa fa-home"></span></a></li>
+      <li class="cnmenu"><a href="#"><span class="fa fa-home"></span></a></li>
+      <li class="cnmenu"><a href="#"><span class="fa fa-home"></span></a></li>
+      <li class="cnmenu"><a href="#"><span class="fa fa-home"></span></a></li>
+      <li class="cnmenu"><a href="#"><span class="fa fa-home"></span></a></li>
+    </ul>
   </div>
-</div><!-- /container -->
+  <div id="cn-overlay" class="cn-overlay cnmenu"></div>
+  <!-- End Nav Structure -->
+</div>

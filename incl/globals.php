@@ -4,6 +4,7 @@ class Globals {
   protected $project = "/dutch_development";
   protected $home = "/home";
   protected $home_dashboard = "/dashboard";
+  public $beheersmail = "rdenblaauwen@gmail.com";
   
   public $lesscinc_php = "/lessc.inc.php";
   public $database_php = "/database.php";
@@ -23,8 +24,6 @@ class Globals {
   public $modalform_php = "/modal_form.php";
   public $modalalert_php = "/modal_alert.php";
   public $map_php = "/map.php";
-  
-  public $beheersmail = "rdenblaauwen@gmail.com";
   
   private $root;
   private $partials = "/partials";

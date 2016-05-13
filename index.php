@@ -20,9 +20,14 @@
 	<link href="css/animate.min.css" rel="stylesheet" />
 	<link href="css/hover.css" rel="stylesheet" />
 	<link href="css/dashboard.css" rel="stylesheet" />
+	<link href="css/component1.css"  rel="stylesheet"  />
 	<link href="css/error.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
+	<style>
 	
+	</style>
+	
+	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
@@ -55,6 +60,8 @@ if(empty($_GET['content'])) {
 				break;
 		}
 	}
+	// Footer
+	require_once $globals->map_php;
 }
 else {
 	switch($_GET['content']) {
@@ -75,6 +82,8 @@ else {
 						break;
 				}
 			}
+			// Footer
+			require_once $globals->map_php;
 			break;
 		// Dashboard
 		case 'dashboard':
@@ -90,25 +99,24 @@ else {
 			}
 			require_once $globals->midbanner_php;
 			require_once $globals->contact_php;
+			// Footer
+			require_once $globals->map_php;
 			break;
 		// Project
 		case 'project':
-			// NOTE: Empty Projectpage
+			require_once $globals->project_php;
 			if(isset($_SESSION['signedin'])) {
 				$cookie->chgLastVisit('project?id='.$_GET['id']);
 			}
-			require_once $globals->error_php;
 			break;
 		// Page 404
 		default:
 			require_once $globals->error_php;
+			// Footer
+			require_once $globals->map_php;
 			break;
 	}	
 }
-
-// Footer
-require_once $globals->map_php;
-
 ?>
 </body>
 
@@ -116,7 +124,8 @@ require_once $globals->map_php;
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="//cdn.datatables.net/t/bs/dt-1.10.11,r-2.0.2/datatables.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/polyfills.js"></script>
+	<script src="js/demo1.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>

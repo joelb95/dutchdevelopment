@@ -7,6 +7,7 @@ $(document).ready(function() {
   // Scripts
   var modalprofile_php = modal + "/modal_profile.php";
   var modalalert_php = modal + "/modal_alert.php";
+  var modalproject_php = modal + "/modal_project.php";
   
   //-----------------------------------//
   
@@ -40,6 +41,23 @@ $(document).ready(function() {
       success : function(data) {
         $('#myAlert').replaceWith(data);
         $('#myAlert').modal('show')
+      }
+    });
+  });
+  
+  // Modal Project
+  $('.test').click(function() {
+    var name = $(this).attr('data-name');
+    
+    $.ajax({
+      type : 'post',
+      url : modalproject_php, 
+      data : {
+        name : name
+      }, 
+      success : function(data) {
+        $('#myProject').replaceWith(data);
+        $('#myProject').modal('show')
       }
     });
   });

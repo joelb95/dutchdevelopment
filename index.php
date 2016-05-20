@@ -106,7 +106,12 @@ else {
 		case 'project':
 			require_once $globals->project_php;
 			if(isset($_SESSION['signedin'])) {
-				$cookie->chgLastVisit('project?id='.$_GET['id']);
+				switch($_SESSION['signedin']['account_rights']) {
+					case 'admin':
+						require_once $globals->modalproject_php;
+						$cookie->chgLastVisit('project?id='.$_GET['id']);
+						break;
+				}
 			}
 			break;
 		// Page 404

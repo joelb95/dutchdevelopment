@@ -16,14 +16,15 @@ class Globals {
   public $topbanner_php = "/top_banner.php";
   public $video_php = "/video.php";
   public $team_php = "/team.php";
-  public $modalprofile_php = "/modal_profile.php";
   public $midbanner_php = "/mid_banner.php";
   public $contact_php = "/contact.php";
   public $dashboard_php = "/dashboard.php";
   public $project_php = "/project.php";
   public $error_php = "/error.php";
+  public $modalprofile_php = "/modal_profile.php";
   public $modalform_php = "/modal_form.php";
   public $modalalert_php = "/modal_alert.php";
+  public $modalproject_php = "/modal_project.php";
   public $map_php = "/map.php";
   
   private $root;
@@ -83,6 +84,7 @@ class Globals {
     $this->modalprofile_php = $this->modal.$this->modalprofile_php;
     $this->modalform_php = $this->modal.$this->modalform_php;
     $this->modalalert_php = $this->modal.$this->modalalert_php;
+    $this->modalproject_php = $this->modal.$this->modalproject_php;
   }
   
   public function locScripts() {

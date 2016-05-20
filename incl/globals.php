@@ -1,7 +1,7 @@
 <?php
 
 class Globals {
-  protected $project = "/dutch_development";
+  protected $project = "";
   protected $home = "/home";
   protected $home_dashboard = "/dashboard";
   public $beheersmail = "rdenblaauwen@gmail.com";

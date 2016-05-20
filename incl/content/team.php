@@ -1,7 +1,16 @@
 <!-- team -->
 <div class="container team">
-  <div class="col-xs-12">
+  <div class="col-xs-12 team-content">
     <h1>Ons team</h1>
+    <?php
+    if(empty($_SESSION['signedin'])) {
+      echo "<h4><i class='fa fa-lock' aria-hidden='true'></i> Log a.u.b. in om documenten te bekijken.</h4>";
+    }
+    else {
+      echo "<h4><i class='fa fa-unlock-alt' aria-hidden='true'></i></i> U bent ingelogd. Klik op een persoon om documenten te bekijken.</h4>";
+    }
+    ?>
+    
     <hr>
     <div class="row">
       <div class="col-md-3 col-xs-6 text-center person" data-name="mohammed">

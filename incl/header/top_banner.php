@@ -3,7 +3,7 @@
 class TopBanner {
   
   public function showVideo() {
-    echo "<a class='hvr-grow' href='#'>
+    echo "<a class='hvr-grow' href='#' data-toggle='modal' data-target='#modal-video'>
             Bekijk onze promo video <i class='fa fa-chevron-circle-right'></i>
           </a>";
   }
@@ -44,6 +44,23 @@ $topbanner = new TopBanner();
           }
         }
       ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-video" class="modal fade modal-video" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+      <video class="responsive-video" controls>
+      <source src="vid/promo/promo.mp4" type="video/mp4">
+      </video>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

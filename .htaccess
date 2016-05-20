@@ -2,7 +2,7 @@ Options -MultiViews
  
 RewriteEngine On 
  
-RewriteBase /dutch_development/
+RewriteBase /
  
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_FILENAME} !-f 

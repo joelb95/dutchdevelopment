@@ -4,12 +4,6 @@ body {
   font-family: Calibri;
   font-size: 14px;
   margin: 0;
-  height: 100%;
-}
-
-body {
-  /*background: #FF9000;*/
-  /*color: #fff;*/
 }
 .full-width {
   width: 100%;
@@ -23,6 +17,14 @@ h2 {
   font-family: montserrat !important;
   text-align: center;
   font-weight: bold;
+}
+h4 {
+  font-family: montserrat !important;
+  text-align: center;
+  font-weight: bold;
+}
+h4.file-title {
+  text-align: left;
 }
 .nav-main {
   width: 350px;
@@ -68,8 +70,8 @@ h2 {
 }
 .top_section .top_bg {
   background: url(../img/banner/rdam-bg_3.jpg);
-  height: 100%;
-  /*background-size: 100%;*/
+  height: 800px;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 .top_section .top_bg .section_container .banner {
@@ -107,6 +109,11 @@ h2 {
   margin: 0 auto;
   position: relative;
 }
+@media (max-width: 991px) {
+  .team .team-content {
+    margin-top: -300px;
+  }
+}
 .footer p {
   text-align: center;
   font-size: 18px;
@@ -133,11 +140,33 @@ h2 {
 .middle_banner img {
   width: 100%;
 }
-.file-title {
-  font-size: 19px;
-  margin-top: 0px;
+.contact .contactbox {
+  border: 1px solid #ccc;
+  margin-top: 35px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  height: 315px;
 }
-.panel-title {
-  margin-bottom: 10px;
-  font-size: 32px;
+.contact .contactbox p {
+  padding: 15px;
+}
+input {
+  padding: 10px;
+}
+.modal-video .modal-body {
+  background-color: #EEE;
+  padding: 0;
+}
+.modal-video .modal-footer {
+  background-color: #EEE;
+  padding: 0;
+  border-top: 0;
+}
+.modal-video .modal-footer .btn-default {
+  background-color: #F5EFEF;
+  margin: 0 auto;
+}
+.responsive-video {
+  max-width: 100%;
+  height: auto;
 }

@@ -1,6 +1,6 @@
 <!-- Contact -->
 <div class="footer">
-  <div class="container">
+  <div class="container contact">
     <h1>Contact</h1>
     <hr>
     <div class="col-xs-6">
@@ -42,12 +42,14 @@
     </div>
     <div class="col-xs-6">
       <h2>Contactgegevens</h2>
-      <p>
-        Albeda Stolwijkstraat<br/>
-        Stolwijkstraat 8<br/>
-        3079 DN Rotterdam<br/>
-        010 292 90 29<br/>
-      </p>
+      <div class="contactbox">
+        <p>
+          Albeda Stolwijkstraat<br/>
+          Stolwijkstraat 8<br/>
+          3079 DN Rotterdam<br/>
+          010 292 90 29<br/>
+        </p>
+      </div>
     </div>
   </div>
 </div>

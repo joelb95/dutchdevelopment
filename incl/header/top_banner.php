@@ -11,7 +11,7 @@ class TopBanner {
   public function showProjectName() {
     echo "<h1>Project NFC</h1> 
           <br>
-          <p>Klik op de waaier onder waneer u ingelogd bent.</p>";
+          <p>Klik op de waaier onderin waneer u ingelogd bent.</p>";
   }
 }
 
